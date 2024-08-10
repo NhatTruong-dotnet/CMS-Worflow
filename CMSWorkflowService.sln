@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWorkflowService.API", "CMSWorkflowService.API\CMSWorkflowService.API.csproj", "{EFB6CEB4-C9D6-4CF3-B3A9-2D9FB1885469}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWorkflowService.Application", "CMSWorkflowService.Application\CMSWorkflowService.Application.csproj", "{79E57A4B-D4B0-4BEA-9169-0E1005E4B1E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWorkflowService.Domain", "CMSWorkflowService.Domain\CMSWorkflowService.Domain.csproj", "{4CA48527-4443-4402-B081-D9AA73D8EA71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWorkflowService.Infrastructure", "CMSWorkflowService.Infrastructure\CMSWorkflowService.Infrastructure.csproj", "{12B243ED-667E-4B5D-B0A1-DCD44F2B2594}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWorkflowService.Share", "CMSWorkflowService.Share\CMSWorkflowService.Share.csproj", "{F37AEB4C-5C78-4522-974F-2C2254BA8EC4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWorkflowService.ServiceDefaults", "CMSWorkflowService.ServiceDefaults\CMSWorkflowService.ServiceDefaults.csproj", "{7D82C7AF-39D6-4E0C-90CC-6D7D39FC04DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFB6CEB4-C9D6-4CF3-B3A9-2D9FB1885469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB6CEB4-C9D6-4CF3-B3A9-2D9FB1885469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB6CEB4-C9D6-4CF3-B3A9-2D9FB1885469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB6CEB4-C9D6-4CF3-B3A9-2D9FB1885469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E57A4B-D4B0-4BEA-9169-0E1005E4B1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E57A4B-D4B0-4BEA-9169-0E1005E4B1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E57A4B-D4B0-4BEA-9169-0E1005E4B1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E57A4B-D4B0-4BEA-9169-0E1005E4B1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA48527-4443-4402-B081-D9AA73D8EA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA48527-4443-4402-B081-D9AA73D8EA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA48527-4443-4402-B081-D9AA73D8EA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA48527-4443-4402-B081-D9AA73D8EA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B243ED-667E-4B5D-B0A1-DCD44F2B2594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B243ED-667E-4B5D-B0A1-DCD44F2B2594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B243ED-667E-4B5D-B0A1-DCD44F2B2594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B243ED-667E-4B5D-B0A1-DCD44F2B2594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37AEB4C-5C78-4522-974F-2C2254BA8EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37AEB4C-5C78-4522-974F-2C2254BA8EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37AEB4C-5C78-4522-974F-2C2254BA8EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37AEB4C-5C78-4522-974F-2C2254BA8EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D82C7AF-39D6-4E0C-90CC-6D7D39FC04DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D82C7AF-39D6-4E0C-90CC-6D7D39FC04DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D82C7AF-39D6-4E0C-90CC-6D7D39FC04DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D82C7AF-39D6-4E0C-90CC-6D7D39FC04DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BE85705-369D-47F4-A92D-6F4533B949E1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@CMSWorkflowService.API_HostAddress = http://localhost:5214
+
+GET {{CMSWorkflowService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
