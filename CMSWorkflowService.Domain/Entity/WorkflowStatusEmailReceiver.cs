@@ -1,14 +1,17 @@
-﻿namespace CMSWorkflowService.Domain.Entity;
+﻿using CMSWorkflowService.Domain.Enum;
 
-public partial class WorkflowStatusEmailReceiver
+namespace CMSWorkflowService.Domain.Entity;
+
+public partial class WorkflowStatusEmailReceiver: Entity
 {
     public Guid Id { get; set; }
 
     public Guid WorkflowStatusEmailId { get; set; }
 
-    public int Type { get; set; }
+    public WorkflowStatusEmailReceiverType Type { get; set; }
 
     public string Email { get; set; } = null!;
 
     public string DisplayName { get; set; } = null!;
+    public virtual WorkflowStatusEmail IdNavigation { get; set; } = null!;
 }

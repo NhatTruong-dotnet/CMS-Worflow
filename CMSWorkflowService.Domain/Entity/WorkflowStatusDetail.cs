@@ -1,6 +1,6 @@
 ﻿namespace CMSWorkflowService.Domain.Entity;
 
-public partial class WorkflowStatusDetail
+public partial class WorkflowStatusDetail: Entity
 {
     public Guid Id { get; set; }
 
@@ -15,4 +15,6 @@ public partial class WorkflowStatusDetail
     public bool IsRequiredDescription { get; set; }
 
     public string DescriptionLabel { get; set; } = null!;
+    public virtual WorkflowStatus WorkflowStatus { get; set; } = null!;
+
 }

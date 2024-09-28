@@ -27,7 +27,7 @@ public partial class CMSWorkflowContext : DbContext
     public virtual DbSet<WorkflowStatusTransaction> WorkflowStatusTransactions { get; set; }
 
     public virtual DbSet<WorkflowStatusUser> WorkflowStatusUsers { get; set; }
-  
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<WorkflowStatus>(entity =>
@@ -40,22 +40,28 @@ public partial class CMSWorkflowContext : DbContext
 
         modelBuilder.Entity<WorkflowStatusDetail>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("WorkflowStatusDetail");
+            entity.ToTable("WorkflowStatusDetail");
 
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.DescriptionLabel).HasMaxLength(255);
             entity.Property(e => e.TemplateFileName).HasMaxLength(255);
             entity.Property(e => e.TemplateUrl).HasMaxLength(255);
+
+            entity.HasOne(d => d.WorkflowStatus).WithMany(p => p.WorkflowStatusDetails)
+                .HasForeignKey(d => d.WorkflowStatusId)
+                .HasConstraintName("FK_WorkflowStatusDetail_WorkflowStatus");
         });
 
         modelBuilder.Entity<WorkflowStatusEmail>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("WorkflowStatusEmail");
+            entity.ToTable("WorkflowStatusEmail");
 
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.WorkflowStatusId).HasColumnName("WorkflowStatusID");
+
+            entity.HasOne(d => d.WorkflowStatus).WithMany(p => p.WorkflowStatusEmails)
+                .HasForeignKey(d => d.WorkflowStatusId)
+                .HasConstraintName("FK_WorkflowStatusEmail_WorkflowStatus");
         });
 
         modelBuilder.Entity<WorkflowStatusEmailReceiver>(entity =>
@@ -66,25 +72,41 @@ public partial class CMSWorkflowContext : DbContext
 
             entity.Property(e => e.DisplayName).HasMaxLength(255);
             entity.Property(e => e.Email).HasMaxLength(255);
+
+            entity.HasOne(d => d.IdNavigation).WithMany()
+                .HasForeignKey(d => d.Id)
+                .HasConstraintName("FK_WorkflowStatusEmailReceiver_WorkflowStatusEmail");
         });
 
         modelBuilder.Entity<WorkflowStatusRole>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("WorkflowStatusRole");
+            entity.ToTable("WorkflowStatusRole");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.WorkflowStatus).WithMany(p => p.WorkflowStatusRoles)
+                .HasForeignKey(d => d.WorkflowStatusId)
+                .HasConstraintName("FK_WorkflowStatusRole_WorkflowStatus");
         });
 
         modelBuilder.Entity<WorkflowStatusTransaction>(entity =>
         {
-            entity.HasNoKey();
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.WorkflowStatusTo).WithMany(p => p.WorkflowStatusTransactions)
+                .HasForeignKey(d => d.WorkflowStatusToId)
+                .HasConstraintName("FK_WorkflowStatusTransactions_WorkflowStatus");
         });
 
         modelBuilder.Entity<WorkflowStatusUser>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("WorkflowStatusUser");
+            entity.ToTable("WorkflowStatusUser");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.WorkflowStatus).WithMany(p => p.WorkflowStatusUsers)
+                .HasForeignKey(d => d.WorkflowStatusId)
+                .HasConstraintName("FK_WorkflowStatusUser_WorkflowStatus");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -1,6 +1,8 @@
-﻿namespace CMSWorkflowService.Domain.Entity;
+﻿using CMSWorkflowService.Domain.Enum;
 
-public partial class WorkflowStatusEmail
+namespace CMSWorkflowService.Domain.Entity;
+
+public partial class WorkflowStatusEmail: Entity
 {
     public Guid Id { get; set; }
 
@@ -8,9 +10,11 @@ public partial class WorkflowStatusEmail
 
     public Guid EmailTemplateCode { get; set; }
 
-    public int Type { get; set; }
+    //"Loại hình gửi: Ngay lập tức, hàng ngày"
+    public WorkflowStatusEmailType Type { get; set; }
 
-    public int DailyType { get; set; }
+    //"Gửi theo thời gian cố định hay gom theo giờ gửi 1 lần"
+    public WorkflowStatusEmailDailyType? DailyType { get; set; }
 
     public long? TimeSendEmail { get; set; }
 
@@ -19,4 +23,6 @@ public partial class WorkflowStatusEmail
     public long? StartTime { get; set; }
 
     public long? EndTime { get; set; }
+    public virtual WorkflowStatus WorkflowStatus { get; set; } = null!;
+
 }

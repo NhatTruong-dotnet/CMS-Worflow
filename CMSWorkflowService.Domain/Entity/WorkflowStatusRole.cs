@@ -1,12 +1,15 @@
-﻿namespace CMSWorkflowService.Domain.Entity;
+﻿using CMSWorkflowService.Domain.Enum;
 
-public partial class WorkflowStatusRole
+namespace CMSWorkflowService.Domain.Entity;
+
+public partial class WorkflowStatusRole: Entity
 {
     public Guid Id { get; set; }
 
     public Guid WorkflowStatusId { get; set; }
 
-    public int Type { get; set; }
+    public WorkflowStatusRoleType Type { get; set; }
 
     public Guid RoleId { get; set; }
+    public virtual WorkflowStatus WorkflowStatus { get; set; } = null!;
 }
